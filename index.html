@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UdoXLaith | Done-For-You Lead Nurturing & Appointment Setting</title>
+    <link rel="icon" type="image/png" href="images/Favicon2.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3B82F6;        /* main blue */
+            --primary-dark: #1D4ED8;   /* darker blue */
+            --dark: #0A0A0A;
+            --darker: #010101;
+            --light: #F5F5F5;
+            --gray: #1E1E1E;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: white;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-title {
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.7);
+        }
+        
+        .glow-box {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .gradient-box {
+            background: linear-gradient(135deg, rgba(10, 10, 10, 0.8), rgba(1, 1, 1, 0.9));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .primary-border {
+            position: relative;
+        }
+        
+        .primary-border::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--primary), rgba(59, 130, 246, 0.3));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .typewriter {
+            border-right: 3px solid var(--primary);
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+        }
+        
+        .typing {
+            animation: blink-caret 1s step-end infinite;
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--primary); }
+        }
+        
+        .scrolling-text {
+            animation: scrollText 20s linear infinite;
+            white-space: nowrap;
+        }
+        
+        @keyframes scrollText {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .gradient-mask {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .ai-chip {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #000000, #1E1E1E, #000000);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), #60A5FA);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .shadow-inner-custom {
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .hexagon-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='60' viewBox='0 0 52 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M26 0L51.9808 15V45L26 60L0.019237 45V15L26 0Z' fill='%233B82F6' fill-opacity='0.03'/%3E%3C/svg%3E%0A");
+            background-size: 52px 60px;
+            opacity: 0.5;
+        }
+        
+        .animated-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.2;
+            animation: blob-move 15s infinite alternate;
+        }
+        
+        @keyframes blob-move {
+            0%, 100% { transform: translate(0%, 0%); }
+            25% { transform: translate(10%, -15%); }
+            50% { transform: translate(5%, 10%); }
+            75% { transform: translate(-10%, 5%); }
+        }
+        
+        .tilt-effect {
+            transition: transform 0.3s ease;
+        }
+        
+        .tilt-effect:hover {
+            transform: perspective(1000px) rotateY(5deg) rotateX(3deg) scale(1.05);
+        }
+        
+        .feature-card {
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.2);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .testimonial-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        @media (max-width: 640px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        
+        .primary-underline {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .primary-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(90deg, var(--primary), transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .primary-underline:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::before {
+            width: 100%;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            color: var(--dark);
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-secondary:hover::before {
+            width: 100%;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .input-field {
+            background-color: rgba(30, 30, 30, 0.8);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+        }
+        
+        @media (max-width: 1024px) {
+            .feature-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .feature-columns {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-card {
+                margin-bottom: 20px;
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        .stat-card {
+            background: rgba(10, 10, 10, 0.6);
+            border: 1px solid rgba(59, 130, 246, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-5px);
+        }
+        
+        .gradient-border {
+            position: relative;
+            background: var(--dark);
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            right: -1px;
+            bottom: -1px;
+            background: linear-gradient(45deg, var(--primary), #1D4ED8);
+            z-index: -1;
+            border-radius: inherit;
+        }
+        
+        .animated-gradient {
+            background: linear-gradient(-45deg, #3B82F6, #1D4ED8, #60A5FA);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient 6s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* AI Tool Interface */
+        .ai-tool-container {
+            background: linear-gradient(135deg, #131313 0%, #0A0A0A 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+        .ai-tool-header {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .ai-tool-content {
+            padding: 20px;
+            min-height: 300px;
+        }
+        .ai-message {
+            background: rgba(30, 30, 30, 0.7);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 12px;
+            border-left: 3px solid var(--primary);
+        }
+        .ai-loading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+        }
+        .ai-loading-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+        .ai-loading-dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .ai-loading-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .ai-loading-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .ai-tool-input {
+            position: relative;
+            margin-top: 16px;
+        }
+        .ai-tool-input input {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(30, 30, 30, 0.7);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+        }
+        .ai-tool-input button {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: black;
+            border: none;
+            border-radius: 50%;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-ai-tool {
+                margin-top: 40px;
+                margin-bottom: 60px;
+            }
+            .ai-tool-floating-card {
+                right: 10px;
+                bottom: -50px;
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-ai-tool {
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body class="grid-pattern">
+    <!-- Animated background elements -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="animated-blob w-96 h-96 bg-primary -left-20 -top-20 opacity-10" style="animation-delay: 0s;"></div>
+        <div class="animated-blob w-80 h-80 bg-purple-500 top-1/4 -right-40 opacity-10" style="animation-delay: 2s;"></div>
+        <div class="animated-blob w-96 h-96 bg-teal-500 bottom-0 left-1/2 opacity-10" style="animation-delay: 4s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-black/70 backdrop-blur-md border-b border-gray-800 fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-8">
+                    <div class="flex items-center">
+                        <img src="https://imagedelivery.net/LtCN8b7XAtToQgo5calb3g/5282c62f-e522-4507-9956-07b063b49201/website" alt="UdoXLaith Logo" class="h-10 mr-3">
+                        <span class="text-2xl font-bold gradient-text">UdoXLaith</span>
+                    </div>
+                    <div class="hidden md:flex gap-6">
+                        <a href="#how-it-works" class="font-medium text-gray-300 hover:text-primary transition-colors flex items-center primary-underline">
+                            <span>How It Works</span>
+                        </a>
+                        <a href="#nurturing-engine" class="font-medium text-gray-300 hover:text-primary transition-colors flex items-center primary-underline">
+                            <span>Nurturing Engine</span>
+                        </a>
+                        <a href="#features" class="font-medium text-gray-300 hover:text-primary transition-colors flex items-center primary-underline">
+                            <span>Features</span>
+                        </a>
+                        <a href="#categories" class="font-medium text-gray-300 hover:text-primary transition-colors flex items-center primary-underline">
+                            <span>Industries</span>
+                        </a>
+                        <a href="#pricing" class="font-medium text-gray-300 hover:text-primary transition-colors flex items-center primary-underline">
+                            <span>Pricing</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button class="hidden md:flex items-center gap-2 px-6 py-2 rounded-full font-medium text-white/80 hover:text-primary transition-colors btn-secondary">
+                        Client Login
+                    </button>
+                    <button class="btn-primary px-6 py-3 rounded-full flex items-center gap-2 glow-box pulse">
+                        <i class="fas fa-bolt"></i>
+                        <span>Book a Call</span>
+                    </button>
+                    <button class="md:hidden text-gray-300 hover:text-primary" id="mobile-menu-button">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-black/90 backdrop-blur-lg border-t border-gray-800" id="mobile-menu">
+            <div class="px-4 py-3 space-y-4">
+                <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-900">
+                    How It Works
+                </a>
+                <a href="#nurturing-engine" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-900">
+                    Nurturing Engine
+                </a>
+                <a href="#features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-900">
+                    Features
+                </a>
+                <a href="#categories" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-900">
+                    Industries
+                </a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-primary hover:bg-gray-900">
+                    Pricing
+                </a>
+                <div class="pt-4 border-t border-gray-800">
+                    <button class="w-full btn-secondary px-4 py-2 rounded-md text-base font-medium">
+                        Client Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-24 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-center gap-8 xl:gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-black/20 border border-gray-800 rounded-full px-4 py-1.5 w-max mb-6 glow-box">
+                        <span class="text-primary text-sm font-medium">DONE-FOR-YOU LEAD NURTURING & APPOINTMENT SETTING</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold hero-title mb-6">
+                        <span class="gradient-text">Turn Old Leads Into</span> <span class="typewriter"></span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-xl">
+                        We plug into the leads you already have — missed calls, old quotes, cold lists — and nurture them into live conversations and booked appointments. When you’re ready, we bolt on a dedicated appointment setter so you never chase again.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <button class="btn-primary px-8 py-4 rounded-full text-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-calendar-check"></i>
+                            See If We Can Nurture Your List
+                        </button>
+                        <button class="btn-secondary px-8 py-4 rounded-full text-lg flex items-center justify-center gap-2">
+                            <i class="fas fa-phone-volume"></i>
+                            Talk About a Setter Add-On
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap gap-6 items-center">
+                        <div class="flex -space-x-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="w-12 h-12 rounded-full border-2 border-black" alt="">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-black" alt="">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" class="w-12 h-12 rounded-full border-2 border-black" alt="">
+                            <div class="w-12 h-12 rounded-full border-2 border-black bg-gray-900 flex items-center justify-center">
+                                <span class="text-xs font-bold text-primary">150+</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                            <div class="flex items-center">
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            </div>
+                            <span class="text-sm text-gray-400">Used by service & local businesses to revive dead pipelines</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero right: Nurturing dashboard -->
+                <div class="lg:w-1/2 relative hero-ai-tool">
+                    <div class="relative floating">
+                        <div class="gradient-box rounded-xl w-full max-w-xl mx-auto primary-border tilt-effect p-2">
+                            <div class="ai-tool-container">
+                                <div class="ai-tool-header flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                        <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                        <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                    </div>
+                                    <h3 class="text-xs font-medium text-gray-400">UdoXLaith – Nurturing Snapshot</h3>
+                                    <div class="w-20"></div>
+                                </div>
+                                <div class="ai-tool-content">
+                                    <div class="ai-message">
+                                        <h4 class="font-bold text-primary mb-1">📬 This Week’s Follow-Ups</h4>
+                                        <p class="text-sm text-gray-300">
+                                            We’re re-engaging old and inactive leads across SMS, email and voicemail.
+                                        </p>
+                                        <div class="mt-3 grid grid-cols-3 gap-3 text-xs">
+                                            <div class="bg-black/40 rounded-lg p-2 text-center">
+                                                <div class="text-2xl font-bold text-primary">241</div>
+                                                <div class="text-gray-400">Dormant Leads Touched</div>
+                                            </div>
+                                            <div class="bg-black/40 rounded-lg p-2 text-center">
+                                                <div class="text-2xl font-bold text-primary">87</div>
+                                                <div class="text-gray-400">Conversations Started</div>
+                                            </div>
+                                            <div class="bg-black/40 rounded-lg p-2 text-center">
+                                                <div class="text-2xl font-bold text-primary">26</div>
+                                                <div class="text-gray-400">Appointments Booked</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ai-message">
+                                        <h4 class="font-bold text-primary mb-1">🎯 Who We’re Prioritizing</h4>
+                                        <p class="text-sm text-gray-300">
+                                            Missed calls, unanswered quotes, old consult requests and “not now” leads — the people most likely to say yes today.
+                                        </p>
+                                        <div class="mt-3 flex items-center gap-2">
+                                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">High-intent past leads</span>
+                                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">Already know your brand</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="ai-message">
+                                        <h4 class="font-bold text-primary mb-1">🤝 Setter Add-On</h4>
+                                        <p class="text-sm text-gray-300">
+                                            On Growth & Scale plans, our appointment setter handles the back-and-forth to lock in times — your team just shows up to the call.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="ai-loading">
+                                        <span class="text-xs">Scanning your list for fast wins...</span>
+                                        <div class="ai-loading-dot"></div>
+                                        <div class="ai-loading-dot"></div>
+                                        <div class="ai-loading-dot"></div>
+                                    </div>
+                                </div>
+                                <div class="ai-tool-input p-4 bg-gray-900/50">
+                                    <input type="text" placeholder="Ask: How many appointments could you revive from 1,000 old leads?" class="w-full">
+                                    <button>
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Live lead card -->
+                        <div class="absolute -bottom-6 -right-6 bg-gray-900 p-6 rounded-2xl shadow-2xl border border-gray-800 w-3/4 z-10 primary-border ai-tool-floating-card">
+                            <div class="ai-chip">LIVE APPOINTMENT</div>
+                            <div class="flex items-center gap-2 mb-3">
+                                <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center text-primary border border-gray-700">
+                                    <i class="fas fa-user-clock"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="text-xs font-medium text-primary">REACTIVATED LEAD</div>
+                                    <h4 class="font-bold text-sm">“Called last year – ready to move forward now.”</h4>
+                                </div>
+                                <div class="px-2 py-1 bg-primary/10 text-primary text-xs font-bold rounded">Booked</div>
+                            </div>
+                            <div class="flex justify-between items-center mt-4 text-xs">
+                                <div class="flex flex-col">
+                                    <span class="text-gray-400">Booked by:</span>
+                                    <span class="text-white font-medium">Your UdoXLaith Setter</span>
+                                </div>
+                                <button class="text-xs btn-primary rounded-full font-bold">
+                                    <i class="fas fa-eye mr-1"></i>
+                                    View Appointment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="py-8 bg-black/30 border-y border-gray-800 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-mask z-10"></div>
+        <div class="scrolling-text whitespace-nowrap text-gray-500 text-sm font-medium w-max flex gap-16">
+            <span class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> Turn old leads into booked time on your calendar</span>
+            <span>•</span>
+            <span>Follow-up across SMS, email, voicemail & reminders</span>
+            <span>•</span>
+            <span>Zero new ads required</span>
+            <span>•</span>
+            <span>Upsell: plug-in appointment setter when you’re ready</span>
+            <span>•</span>
+            <span>We work inside your calendar & CRM</span>
+            <span>•</span>
+            <span>Service-business & local-business friendly</span>
+        </div>
+    </div>
+
+    <!-- Benefits -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    WHY NURTURE FIRST
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Before You Buy More Leads, <span class="gradient-text">Monetize the Ones You Have</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    You already paid for leads, clicks and calls. We go back through that pipeline, warm them up, and turn them into appointments — then add a setter to keep your calendar full.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="gradient-box p-8 rounded-2xl feature-card tilt-effect">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary text-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Unlock Your Database</h3>
+                    <p class="text-gray-400">
+                        We plug into your CRM, spreadsheets or form leads and revive people who went cold — no new ad spend.
+                    </p>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card tilt-effect">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary text-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Done-For-You Follow-Up</h3>
+                    <p class="text-gray-400">
+                        Multi-touch sequences across text, email and voicemail so good leads don’t slip away after one missed call.
+                    </p>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card tilt-effect">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary text-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Setter Handles the Back-and-Forth</h3>
+                    <p class="text-gray-400">
+                        On Growth & Scale plans, our appointment setter confirms times, handles reschedules, and updates your calendar.
+                    </p>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card tilt-effect">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 text-primary text-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-4">Your Team Just Shows Up</h3>
+                    <p class="text-gray-400">
+                        No extra software to learn. You get clear notifications and booked times — we handle everything in between.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-24 px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    SIMPLE 3-STEP PROCESS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    How We Nurture & <span class="gradient-text">Book for You</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    No new funnels, no complicated dashboards. We connect to your existing leads and calendar, then handle the follow-up and booking.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
+                <div class="gradient-box p-8 rounded-2xl primary-border feature-card tilt-effect animate-fade-in">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-black to-gray-900 rounded-full flex items-center justify-center text-primary text-3xl font-bold mb-6 border border-gray-800 shadow-inner-custom">
+                                1
+                            </div>
+                            <div class="ai-chip">AUDIT & IMPORT</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">We Review Your Lead Sources</h3>
+                        <p class="text-gray-300">
+                            We look at your CRM, forms and “lost” opportunities, then segment lists like: old quotes, no-shows, “call me later”, and more.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl primary-border feature-card tilt-effect animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-black to-gray-900 rounded-full flex items-center justify-center text-primary text-3xl font-bold mb-6 border border-gray-800 shadow-inner-custom">
+                                2
+                            </div>
+                            <div class="ai-chip">NURTURE SEQUENCES</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">We Run Smart Follow-Up</h3>
+                        <p class="text-gray-300">
+                            We send friendly, compliant follow-ups under your brand — checking timing, interest and next steps, without being pushy.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl primary-border feature-card tilt-effect animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="relative mb-6">
+                            <div class="w-24 h-24 bg-gradient-to-br from-black to-gray-900 rounded-full flex items-center justify-center text-primary text-3xl font-bold mb-6 border border-gray-800 shadow-inner-custom">
+                                3
+                            </div>
+                            <div class="ai-chip">SETTER (OPTIONAL)</div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">We Book Appointments For You</h3>
+                        <p class="text-gray-300">
+                            Add a UdoXLaith appointment setter to take over the back-and-forth and lock in times directly on your calendar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button class="btn-primary px-8 py-4 rounded-full text-lg glow-box">
+                    <i class="fas fa-play-circle mr-2"></i>
+                    Watch 3-Minute Walkthrough
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nurturing Engine -->
+    <section id="nurturing-engine" class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-black/20">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    HOW OUR NURTURING ENGINE WORKS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    We Don’t Just “Send Blasts” — <span class="gradient-text">We Start Conversations</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The people we’re contacting already know who you are. Our job is to show up at the right time with the right reminder and make it easy to say “yes, let’s book.”
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6">Built Around Your Real-World Sales Process</h3>
+                    <p class="text-gray-300 mb-6">
+                        We listen to how you actually close deals, then design follow-ups that sound like you — not a generic marketing script.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Time-based nudges for old quotes, estimates and proposals that never got a response.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Missed-call and no-show recovery messages so warm leads don’t disappear forever.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Polite “just checking in” flows for “not right now” leads to catch them when timing changes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-xs"></i>
+                            </div>
+                            <span class="text-gray-300">Negative replies & stop requests are filtered out and respected — we protect your brand.</span>
+                        </li>
+                    </ul>
+                    <button class="btn-primary px-6 py-3 rounded-full">
+                        Talk Through Your Current Pipeline
+                    </button>
+                </div>
+
+                <div class="gradient-box rounded-xl p-1 primary-border tilt-effect">
+                    <div class="bg-black/20 rounded-lg p-8 aspect-video flex items-center justify-center">
+                        <div class="text-center max-w-md mx-auto">
+                            <div class="w-20 h-20 mx-auto rounded-full bg-primary/10 text-primary text-3xl flex items-center justify-center mb-6">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4 class="font-bold text-2xl text-white mb-2">From Lead → Conversation → Appointment</h4>
+                            <p class="text-gray-300 mb-4">
+                                We track each step: who replied, who is interested, who booked — and which segments produce the fastest wins.
+                            </p>
+                            <div class="grid grid-cols-3 gap-3 text-xs mt-4">
+                                <div class="bg-black/40 rounded-lg p-3">
+                                    <div class="text-primary font-bold mb-1">42%</div>
+                                    <div class="text-gray-400">Response rate on warmed lists</div>
+                                </div>
+                                <div class="bg-black/40 rounded-lg p-3">
+                                    <div class="text-primary font-bold mb-1">3–7 touches</div>
+                                    <div class="text-gray-400">Per lead across channels</div>
+                                </div>
+                                <div class="bg-black/40 rounded-lg p-3">
+                                    <div class="text-primary font-bold mb-1">Live sync</div>
+                                    <div class="text-gray-400">Into your calendar/CRM</div>
+                                </div>
+                            </div>
+                            <div class="flex gap-2 justify-center text-xs mt-4">
+                                <div class="px-3 py-1 rounded-full bg-primary/10 text-primary">Nurture only</div>
+                                <div class="px-3 py-1 rounded-full bg-primary/10 text-primary">Nurture + Setter</div>
+                                <div class="px-3 py-1 rounded-full bg-primary/10 text-primary">White-label option</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section id="categories" class="py-24 px-4 sm:px-6 lg:px-8 bg-black/20 relative overflow-hidden">
+        <div class="hexagon-bg absolute inset-0 opacity-10"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    WHO WE NURTURE FOR
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Best For Businesses With <span class="gradient-text">Lead Lists They’re Under-Using</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    If you have incoming leads, forms, calls or inquiries — but you’re not following up as much as you should — we’re built for you.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <span class="font-medium text-center">Home Services</span>
+                    <span class="text-xs text-primary mt-1">Roofing, gutters, lights & more</span>
+                </div>
+                
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <span class="font-medium text-center">Med Spa & Beauty</span>
+                    <span class="text-xs text-primary mt-1">Consult & treatment follow-up</span>
+                </div>
+                
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <span class="font-medium text-center">Dental & Ortho</span>
+                    <span class="text-xs text-primary mt-1">Missed calls & old inquiries</span>
+                </div>
+
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <span class="font-medium text-center">B2B Services</span>
+                    <span class="text-xs text-primary mt-1">Discovery calls & demos</span>
+                </div>
+
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-city"></i>
+                    </div>
+                    <span class="font-medium text-center">Real Estate</span>
+                    <span class="text-xs text-primary mt-1">Buyer & seller follow-up</span>
+                </div>
+
+                <div class="group aspect-square bg-gray-900/70 rounded-xl p-6 flex flex-col justify-center items-center border border-gray-800 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="w-16 h-16 rounded-full bg-black flex items-center justify-center text-primary text-2xl mb-4 group-hover:bg-primary/10 transition-colors">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <span class="font-medium text-center">Agencies & More</span>
+                    <span class="text-xs text-primary mt-1">Ask if we can plug in</span>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button class="btn-secondary px-8 py-4 rounded-full text-lg">
+                    <i class="fas fa-search mr-2"></i>
+                    See If We Can Nurture Your Industry
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section id="stories" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black to-gray-900 relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    NURTURING RESULTS
+                </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                What Happens When You <span class="gradient-text">Stop Letting Leads Go Cold</span>
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                A few examples of what happens when a business plugs in nurturing and a setter to work their existing list — instead of chasing brand-new strangers.
+            </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="gradient-box p-8 rounded-2xl relative overflow-hidden testimonial-card">
+                    <div class="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-16 h-16 rounded-full object-cover border-2 border-primary/30">
+                        <div>
+                            <h4 class="font-bold text-white">Kara L.</h4>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="text-primary text-sm">Med Spa Owner</span>
+                                <span class="text-primary">•</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 4.9
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        “They went back through our old consult requests and no-shows. We ended up booking out a full month from people who were already in our system but we never followed up with.”
+                    </p>
+                    <div class="relative">
+                        <div class="bg-black/30 rounded-lg p-4 border border-gray-700">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">30+ Reactivated Appointments</h4>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Nurture + Setter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl relative overflow-hidden testimonial-card">
+                    <div class="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-16 h-16 rounded-full object-cover border-2 border-primary/30">
+                        <div>
+                            <h4 class="font-bold text-white">Andre C.</h4>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="text-primary text-sm">Roofing Contractor</span>
+                                <span class="text-primary">•</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 5.0
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        “We already had a list from storms last year. They came in, cleaned it up, followed up, and their setter just put jobs on the board. No new ads, just better follow-up.”
+                    </p>
+                    <div class="relative">
+                        <div class="bg-black/30 rounded-lg p-4 border border-gray-700">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Jobs From Old Leads</h4>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">Database Reactivation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl relative overflow-hidden testimonial-card">
+                    <div class="absolute -right-10 -top-10 w-48 h-48 rounded-full bg-primary/10 blur-2xl"></div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-16 h-16 rounded-full object-cover border-2 border-primary/30">
+                        <div>
+                            <h4 class="font-bold text-white">Maya P.</h4>
+                            <div class="flex items-center gap-1 mt-1">
+                                <span class="text-primary text-sm">Agency Owner</span>
+                                <span class="text-primary">•</span>
+                                <span class="text-yellow-400 text-xs">
+                                    <i class="fas fa-star"></i> 4.8
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        “We used them as a white-label nurturing team. Our clients think we built this in-house. They’re doing the nurturing and appointment setting behind the scenes.”
+                    </p>
+                    <div class="relative">
+                        <div class="bg-black/30 rounded-lg p-4 border border-gray-700">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Agency Retainer Stickiness</h4>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span class="text-xs bg-primary/10 text-primary px-2 py-0.5 rounded-full">White-Label Nurture + Setter</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    WHAT’S INCLUDED
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    What You Get With <span class="gradient-text">UdoXLaith Nurturing</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    You bring the leads. We bring the follow-up engine, messaging and (when you’re ready) the appointment setter that makes the whole thing run.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Multi-Channel Follow-Up</h3>
+                            <p class="text-gray-400">
+                                SMS, voicemail drops, email and reminders — timed to feel human, not spammy. Every message is sent under your brand.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-list-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Smart Segmentation</h3>
+                            <p class="text-gray-400">
+                                Different flows for “quote sent”, “no-show”, “not ready yet”, “didn’t answer”, and more — because each group needs a different tone.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-clock"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Appointment Setter Add-On</h3>
+                            <p class="text-gray-400">
+                                A dedicated setter who handles replies, time options and confirmations for you. Your team just sees booked slots.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Simple Reporting</h3>
+                            <p class="text-gray-400">
+                                See how many leads were touched, who responded, and how many appointments were booked — no heavy dashboards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Respectful & Compliant</h3>
+                            <p class="text-gray-400">
+                                We respect opt-outs, don’t burn lists, and keep messaging business-owner-friendly — no aggressive scripts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="gradient-box p-8 rounded-2xl feature-card">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary text-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Operator-Level Thinking</h3>
+                            <p class="text-gray-400">
+                                We think in booked jobs, consults and revenue — not vanity metrics. The goal is more qualified conversations for your team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <button class="btn-secondary px-8 py-4 rounded-full text-lg">
+                    See Exactly What’s Included on Each Plan
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="py-24 px-4 sm:px-6 lg:px-8 bg-black/20 relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="text-center mb-16">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-black/30 border border-gray-800 text-primary font-medium mb-4 glow-box">
+                    CLEAR OPTIONS
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Start With Nurture — <span class="gradient-text">Add a Setter When You’re Ready</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Whether you just need someone to work your list, or you want a full “nurture + appointment setter” system, we keep the structure simple.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Nurture Only -->
+                <div class="gradient-box p-8 rounded-2xl pricing-card">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Nurture-Only</h3>
+                        <p class="text-gray-400 text-sm">For businesses testing database reactivation</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">$0</span>
+                        <span class="text-gray-400">/month + per-lead touched</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">We design and run nurturing sequences on your list</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Multi-channel follow-up under your brand</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Basic reporting on responses & interest</span>
+                        </li>
+                        <li class="flex items-center gap-2 opacity-50">
+                            <i class="fas fa-times text-gray-500"></i>
+                            <span class="text-gray-500">No dedicated appointment setter</span>
+                        </li>
+                    </ul>
+                    <button class="w-full btn-secondary px-6 py-3 rounded-full">
+                        Start With Nurturing-Only
+                    </button>
+                </div>
+                
+                <!-- Nurture + Setter -->
+                <div class="gradient-box p-8 rounded-2xl pricing-card relative border-2 border-primary/30">
+                    <div class="absolute top-0 right-0 bg-primary text-black px-4 py-1 rounded-bl-lg rounded-tr-lg font-bold text-sm">
+                        MOST POPULAR
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Nurture + Setter</h3>
+                        <p class="text-gray-400 text-sm">For teams that want calls booked for them</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">$1.5k</span>
+                        <span class="text-gray-400">/month + performance</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Everything in Nurture-Only plan</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Dedicated appointment setter to handle replies & booking</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Calendar integration & show-up optimization</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Regular strategy reviews to improve close rate</span>
+                        </li>
+                    </ul>
+                    <button class="w-full btn-primary px-6 py-3 rounded-full glow-box">
+                        Talk About Nurture + Setter
+                    </button>
+                </div>
+                
+                <!-- White-Label / Scale -->
+                <div class="gradient-box p-8 rounded-2xl pricing-card">
+                    <div class="mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-1">Scale / White-Label</h3>
+                        <p class="text-gray-400 text-sm">For multi-location teams and agencies</p>
+                    </div>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold text-white">Custom</span>
+                        <span class="text-gray-400">/quote</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Multiple locations, brands or client accounts</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">White-label nurturing and appointment setting</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Custom SLAs, reporting and lead routing</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-primary"></i>
+                            <span class="text-gray-300">Built to match your internal processes</span>
+                        </li>
+                    </ul>
+                    <button class="w-full btn-secondary px-6 py-3 rounded-full">
+                        Contact Sales About Scale
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black to-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                How Many Appointments Are Hiding in <span class="gradient-text">Your Old Leads?</span>
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                If you stopped everything today and only focused on re-engaging the people who already know your name, how many consults, quotes, or jobs could that turn into? That’s what we’re here to find out — and run for you.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="btn-primary px-8 py-4 rounded-full text-lg">
+                    <i class="fas fa-bolt mr-2"></i>
+                    Book a Nurturing Strategy Call
+                </button>
+                <button class="btn-secondary px-8 py-4 rounded-full text-lg">
+                    <i class="fas fa-comments mr-2"></i>
+                    Ask About Appointment Setters
+                </button>
+            </div>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>We work your existing leads — no forced ad spend</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Done-for-you nurturing & optional setter</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Respectful, brand-safe messaging</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black/70 border-t border-gray-800 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-6">
+                        <img src="https://imagedelivery.net/LtCN8b7XAtToQgo5calb3g/5282c62f-e522-4507-9956-07b063b49201/website" alt="UdoXLaith Logo" class="h-10 mr-3">
+                        <span class="text-2xl font-bold gradient-text">UdoXLaith</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        A done-for-you nurturing and appointment-setting partner for businesses that already have leads in the pipeline — but don’t have time to follow up with all of them.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-900 flex items-center justify-center text-gray-300 hover:text-primary transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Platform</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-primary transition-colors">How It Works</a></li>
+                        <li><a href="#nurturing-engine" class="text-gray-400 hover:text-primary transition-colors">Nurturing Engine</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-primary transition-colors">Features</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#stories" class="text-gray-400 hover:text-primary transition-colors">Client Stories</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Lead Nurturing Guide</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Webinars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">
+                    © 2025 UdoXLaith. All rights reserved.
+                </p>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Cookie Policy</a>
+                </div>
+            </div>
+            <div class="mt-6 text-center md:text-left text-xs text-gray-500">
+                <p>UdoXLaith helps you re-activate & nurture leads you already paid for, then bolt on a setter so you can focus on doing the work — not chasing people down.</p>
+                <p class="mt-1">You focus on running the business. We focus on filling your calendar from the leads you already have.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                menu.classList.add('block');
+            } else {
+                menu.classList.remove('block');
+                menu.classList.add('hidden');
+            }
+        });
+
+        // Typewriter effect
+        let i = 0;
+        const txt = 'More Booked Appointments';
+        const speed = 120;
+        
+        function typeWriter() {
+            if (i < txt.length) {
+                document.querySelector(".typewriter").textContent += txt.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            } else {
+                document.querySelector(".typewriter").classList.add("typing");
+            }
+        }
+        
+        window.addEventListener('load', function() {
+            setTimeout(typeWriter, 1000);
+        });
+
+        // Sparkle effect
+        document.addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = e.clientX + 'px';
+            sparkle.style.top = e.clientY + 'px';
+            document.body.appendChild(sparkle);
+            
+            sparkle.animate([
+                { opacity: 1, transform: 'scale(1)' },
+                { opacity: 0, transform: 'scale(3)' }
+            ], {
+                duration: 1000,
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                fill: 'forwards'
+            });
+            
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animation triggers
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            elements.forEach(element => {
+                element.style.animationPlayState = 'paused';
+                observer.observe(element);
+            });
+        }
+        window.addEventListener('load', animateOnScroll);
+    </script>
+
+    <!-- DeepSite credit (optional, keep/remove as needed) -->
+    <p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - <a href="https://enzostvs-deepsite.hf.space?remix=hamadali1/ax1" style="color: #fff;text-decoration: underline;" target="_blank" >🧬 Remix</a></p>
+</body>
+</html>
